@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+{% load static %}
+  <html>
+    <head>
+		<!--Import Google Icon Font-->
+		<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<!--Import materialize.css-->
+		<link type="text/css" rel="stylesheet" href="{% static 'css/materialize.css' %}" media="screen,projection"/>
+		<!--Let browser know website is optimized for mobile-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<link href="{% static 'css/custom.css' %}" rel="stylesheet" type="text/css">
+		<link rel="icon" href="{% static 'images/logo.ico' %}" type="image/x-icon">
+    </head>
+
+    <body>
+		<div>
+			<ul id="dropdown1" class="dropdown-content">
+			  <li><a href="{% url 'tpo:Procedure_And_Policy' %}" class="menu">Procedure and Policy</a></li>
+			  <li class="divider"></li>
+				<li><a href="{% url 'tpo:CompanyResponseSheet' %}" class="menu">Company Response Form</a></li>
+			  <li class="divider"></li>
+			  <li><a href="{% url 'tpo:Calender' %}" class="menu">Placement Callender</a></li>
+			  <li class="divider"></li>
+			  <li><a href="{% url 'tpo:Zip' %}" class="menu" target="_blank">Job Notification form</a></li>
+			  <li class="divider"></li>
+			  <li><a href="{% url 'tpo:prevrec' %}" class="menu">Past Recruiters</a></li>
+			  <li class="divider"></li>
+			  {% if user.is_authenticated %}
+			  <li><a href="{% url 'tpo:CompanyVisiting' %}" class="menu" target="_blank">Companies Visiting</a></li>
+			  <li class="divider"></li>
+			  	{% endif %}
+			</ul>
+			<ul id="dropdown2" class="dropdown-content">
+			  <li><a href="{% url 'tpo:Contact_Us' %}" class="menu">Office</a></li>
+			  <li class="divider"></li>
+			  <li><a href="{% url 'tpo:Leave_Page' %}" class="menu">Leave Message</a></li>
+			  <li class="divider"></li>
+			  <li><a href="{% url 'tpo:Feedback' %}" class="menu">Feedback</a></li>
+				<li class="divider"></li>
+			  <li><a href="{% url 'tpo:Varanasi' %}" class="menu">Varanasi</a></li>
+			</ul>
+			<ul id="dropdown3" class="dropdown-content">
+			  <li><a href="{% url 'tpo:overview' %}" class="menu">Overview</a></li>
+			  <li class="divider"></li>
+				<li><a href="{% url 'tpo:disciplines' %}" class="menu">Disciplines</a></li>
+			  <li class="divider"></li>
+			  <li><a href="{% url 'tpo:Beyond' %}" class="menu">Beyond Academics</a></li>
+			</ul>
+			<div class="navbar-wrapper">
+			<nav style="background-image: url('../static/images/varanasi.jpg') ;height:auto" class="z-depth-4">
+				<table width="100%" style="table-layout:auto">
+					<tbody>
+						<tr>
+							<td width="37%" align="right"><div style="height:auto"><img align="right" src="{% static 'images/logo.png' %}" /></div></td>
+							<td width="38%" style="color: #000000;"><div style="height:auto">
+								
+								<p><font size="5">Indian Institute of Technology (BHU) Varanasi</font>
+								<br><font size="6">Training and Placement Cell</font>
+								<br><font size="2">
+									<a href="mailto:tpo@iitbhu.ac.in" style="color:black">tpo@iitbhu.ac.in</a> |
+									<a href="mailto:ittpo@sify.com" style="color:black">ittpo@sify.com</a> |
+									<a href="tel:+915422307007" style="color:black">+91-542-2307007</a> |
+									<a href="tel:+915422368160" style="color:black">+91-542-2368160</a>
+								</font></p>
+							</div></td>
+							<td width="25%"></td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="row">
+				<div class="container">
+				<div class="col s10">
+				  
+				  <ul class="nav-center" id="nav-mobile" class="left hide-on-med-and-down">
+					<li><a href="{% url 'tpo:Home' %}" class="menu">Home</a></li>
+					<li><a href="{% url 'tpo:Why' %}" class="menu">Why recruit at IIT-BHU</a></li>
+					<li><a class="dropdown-button menu" href="{% url 'tpo:Procedure_And_Policy' %}" data-activates="dropdown1"  >Companies</a></li>
+					<li><a href="{% url 'tpo:overview' %}" class="dropdown-button menu" data-activates="dropdown3">Academics</a></li>
+					<li><a href="{% url 'tpo:Contact_Us' %}" class="dropdown-button menu" data-activates="dropdown2" >Contact Us</a></li>
+				  </ul>
+				</div>
+				<div class="col s2">
+					<ul class="hover-menu vertical fright">
+						{% if user.is_authenticated %}
+                                <li>HELLO, {{user.first_name}}</li>
+                                <li><a href="logout">logout</a></li>
+                                {% else %}
+                                <li><a href="register">Register</a></li>
+                                <li><a href="login">Login</a></li>
+                                {% endif %}
+					</ul>
+				</div>
+				</div>
+		   
+				</div>
+			</nav>
+			</div>
+		</div>
+{% block content %}
+		{% endblock %}
+		<footer id="footer" class="page-footer" style="background-color: #eeeeee" height="auto" >
+          <div class="container">
+            <div class="row" style="margin-bottom:0px">
+              <div class="col s12">
+                <center><p>&copy Indian Institute of Technology (BHU), Varanasi, Uttar Pradesh, India - 221005</p></center>
+              </div>
+              <table class="layout">
+					<tbody>
+						<tr>
+							<td width="12%"></td>
+							<td align="left" style="width: 100px; text-align: right;"><img width="70%" height="80%" src="{% static 'images/logo.png' %}"/></td>
+							<td style="color: #000000;">
+								<div class="col s6">
+								  <!--<ul class="nav-center" id="nav-mobile" class="center hide-on-med-and-right">-->
+									<td><a href="#!" >Home</a></td>
+									<td><a href="#!" >Events</a></td>
+									<td><a href="#!" >News</a></td>
+									<td><a href="#!" >Academics</a></td>
+									<td><a href="#!" >Administration</a></td>
+									<td><a href="#!" >Library</a></td>
+									<td><a href="#!" >Placements</a></td>
+									<td width="15%"></td>
+								  <!--</ul>-->
+								</div>
+							</td>
+						</tr>
+					</tbody>
+			  </table>
+			  </div>
+			</footer>
+		</div>
+		</div>
+            </div>
+          </div>
+        </footer>
+      <!--Import jQuery before materialize.js-->
+      <script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+      <script type="text/javascript" src="{% static 'js/materialize.min.js' %}"></script>
+    </body>
+  </html>

@@ -1,0 +1,37 @@
+{% extends 'tpo/base.html' %}
+{% load static %}
+{% block content %}
+		<div class="container" style="margin-top: 2%">
+			<div>
+				<h3>How to reach Varanasi</h3>
+				<p>Varanasi is the cultural capital of India and the melting pot of Indian civilization. 
+				Varanasi or Benaras has a well-developed transport network and is well 
+				connected to all the major Indian cities and states by air, road and rail.</p>
+				<img src="{% static 'images/varanasi.jpg' %}" width="100%"/>
+				<h5 style="color: #000080">By Air</h5>
+				<p>Varanasi is well connected and accessible to major Indian cities and tourist spots. There are daily domestic 
+				flights to and from Varanasi to several cities in India. Apart from the state owned Indian Airlines, there are 
+				many private air taxi operators that offer their services from Varanasi to other Indian cities. In fact, the 
+				daily flights on Delhi-Agra-Khajuraho-Varanasi route are quite popular among the tourists.</p>
+				<h5 style="color: #000080">By Rail</h5>
+				<p>Since Varanasi lies in the heartland of the North Indian plains, it is well connected to Delhi, Kolkata, 
+				Mumbai and other parts of India. There are two railway stations in Varanasi, the Kashi Junction and the 
+				Varanasi Junction (also known as Varanasi Cantonment). Rajdhani Express from Delhi or from Calcutta passes 
+				through Varanasi too. One can also catch trains from Mughalsarai, just 10 km south of Varanasi.</p>
+				<h5 style="color: #000080">By Road</h5>
+				<p>Situated in the flat Ganga plains, Varanasi has a good network of roads. frequent public and private buses
+				and road transport to all the major towns of Uttar Pradesh and nearby areas.</p>
+				<h5 style="color: #000080">Location on Map</h5>
+				
+				<script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script>
+				<div style='overflow:hidden;height:440px;width:700px;'>
+				<div id='gmap_canvas' style='height:440px;width:700px;'></div>
+				<div><small><a href="http://www.embedgooglemaps.com"></a></small></div>
+				<div><small><a href="https://binaireoptieservaringen.nl/"></a></small></div>
+				<style>#gmap_canvas img{max-width:none!important;background:none!important}</style>
+				</div><script type='text/javascript'>function init_map(){var myOptions = {zoom:10,center:new google.maps.LatLng(25.3176452,82.97391440000001),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(25.3176452,82.97391440000001)});google.maps.event.addListener(marker, 'click', function(){infowindow.open(map,marker);});infowindow.open(map,marker);}google.maps.event.addDomListener(window, 'load', init_map);</script>
+				<br><br>
+			</div>
+			
+		</div>
+{% endblock %}

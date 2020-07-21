@@ -1,0 +1,130 @@
+{% extends 'tpo/base.html' %}
+{% load static %}
+
+{% block content %}
+		<div style="margin-top:2%;" class="container">
+			<h3 class="fleft">Welcome to Training &amp; Placement Cell</h3>
+			<div class="statemenu fright">
+				<ul class="vertical">
+				<li><a href="{% url 'tpo:Zip' %}" class="" target="_blank">Job Notification Form <img src="{% static 'images/response.png' %}" style="margin: -8px 0;" alt="DOWNLOAD" class="thumbhead"></a></li>
+				</ul>
+			</div>
+			&nbsp;
+			<div class="statemenu fright">
+				<ul class="vertical">
+				<li><a href="{% url 'tpo:Brochure_pdf' %}" target="_blank">Placement Brochure <img src="{% static 'images/brochure.png' %}" style="margin: -8px 0;" alt="DOWNLOAD" class="thumbhead"></a></li>
+				</ul>
+			</div>
+			<table class="layout">
+			<tbody>
+				<tr>
+					<td rowspan="8" style="width: 50%; padding: 5px; border-right: 1px dashed #CCC;text-align:left">
+						<p>The Training &amp; Placement Office, IIT (BHU) Varanasi facilitates the process of placement of students passing out from the Institute besides collaborating with leading organizations and institutes in setting up of internship and training program of students.</p>
+						<br>					
+						<p><img src="{% static 'images/tpo.jpg' %}" class="fleft" style="width: 60%; padding: 0 15px 0 0;"></p>
+						<p>The office liaises with various industrial establishments, corporate houses etc which conduct campus interviews and select graduate and post-graduate students from all disciplines. The Training &amp; Placement Office provides the infra-structural facilities to conduct group discussions, tests and interviews besides catering to other logistics. The Office interacts with many industries in the country, of which nearly 200 companies visit the campus for holding campus interviews. The industries which approach the institute come under the purview of:						</p>
+						<ul>							
+						<li>Core Engineering industries</li>
+						<li>IT &amp; IT enabled services</li>
+						<li>Manufacturing Industries</li>
+						<li>Consultancy Firms</li>
+						<li>Finance Companies</li>
+						<li>Management Organisations</li>
+						<li>R &amp; D laboratories</li>
+						</ul>
+						<p>
+						</p>
+						<p>The placement season runs through the course of the year commencing the last week of July through to March. Pre-Placement Talks are also conducted in this regard as per mutual convenience. Job offers, dates of interviews, selection of candidates etc. are announced through the Training &amp; Placement Office.</p>
+						<br>
+						<p>The Placement Office is assisted by a committee comprising representatives of students from the under-graduate and post-graduate engineering streams. The committee evolves a broad policy framework every year besides a set of rules which are inviolable. Students members are closely co-opted in implementing these policy decisions.</p>
+					</td>
+					<td style="padding: 5px;text-align:left">
+						<h5>Invitation Messages</h5>
+						<div class="thumb80" style="background: url('{% static 'images/ittpo.png' %}') no-repeat left center; background-size: 80px 80px;">
+						<p>It gives us immense pleasure to extend to you a most cordial invitation to participate in the Campus Recruitment Programme of the Institute  ... <br>
+						<a href="{% url 'tpo:tpomsg' %}" class="navigate">Message from TPO</a></p>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td style="padding: 5px; border-bottom: 1px dashed #CCC;text-align:left">
+						<div class="thumb80" style="background: url('{% static 'images/director.png' %}') no-repeat left center; background-size: 80px 80px;">
+						<p>Greetings from Indian Institute of Technology (BHU), Varanasi and a hearty welcome to the Land of Shiva !!!We are proud to be the first to pioneer degree level ... <br>
+						<a href="{% url 'tpo:directormsg' %}" class="navigate">Message from Director</a></p>
+						</div>
+					</td>
+				</tr>
+
+				<tr>
+					<td style="padding: 5px;text-align:left">
+						<h5>Academics</h5>
+						<div class="thumb100" style="background: url('{% static 'images/department.jpg' %}') no-repeat left center; background-size: 100px 70px;">
+						<p>The departments equip students with the best possible trades of an engineer through their rigorous regime of classes and laboratoray sessions ... <br>
+						<a href="{% url 'tpo:overview' %}" class="ui">Academics Overview</a></p>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td style="padding: 5px; border-bottom: 1px dashed #CCC;text-align:left">
+						<div class="thumb100" style="background: url('{% static 'images/sb.jpg' %}') no-repeat left center; background-size: 100px 70px;">
+						<p>Students at IIT (BHU) Varanasi enjoy a very vibrant campus life, which besides regular academics is full of extra curricular activities, thus networking ... <br>
+						<a href="{% url 'tpo:Beyond' %}" class="ui">Beyond Academics</a></p>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td style="padding: 5px;text-align:left">
+						<h5>Placements</h5>
+						<div class="thumb100" style="background: url('{% static 'images/tpo.jpg' %}') no-repeat left center; background-size: 100px 75px;">
+						<p>Besides a warm welcome, we provide companies with the following aid : 1. Large classrooms &amp; halls for Pre-Placement Talks and Written Tests ... <br>
+						<a href="{% url 'tpo:Facilities' %}" class="ui">Company Facilities</a></p>
+						</div>
+					</td>
+				</tr>
+				<tr style="border-bottom: 1px dashed #CCC;">
+					<td style="padding: 5px;text-align:left">
+						<div class="thumb100" style="background: url('{% static 'images/brochure.jpg' %}') no-repeat left center; background-size: 100px 75px;">
+						<p>Our brochure provides profile of the Institute, as well as detailing the various programmes/courses offered by the departments, and details of the contact ... <br>
+						<a href="{% url 'tpo:Policy_pdf' %}" target="_blank">IIT (BHU) Varanasi Placement Brochure</a></p>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td style="padding: 5px;text-align:left">
+						<h5>Why Recruit @ IIT (BHU) Varanasi ?</h5>
+						<div class="thumb100" style="background: url('{% static 'images/bhugate.jpg' %}') no-repeat left center; background-size: 100px 70px;">
+						<p>Admission to IIT (BHU) Varanasi takes place through the Joint Entrance Examination (JEE) followed by the Indian Institutes of Technology (IITs) ... <br>
+						<a href="info/why-at-iit-bhu-varanasi/" class="ui">IIT (BHU) Varanasi Advantage</a></p>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td style="padding: 5px; border-bottom: 1px dashed #CCC;text-align:left">
+						<div class="thumb100" style="background: url('{% static 'images/alumni.jpg' %}') no-repeat left center; background-size: 100px 70px;">
+						<p>The alumni of the institute occupy the echelons of the corporate ladder courtesy a dynamic, ever-evolving system where priority is placed ... <br>
+						<a href="info/why-at-iit-bhu-varanasi/#!/view/#adv-alumni/" class="ui">IIT (BHU) Varanasi Alumni</a></p>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td style="text-align:left">
+						<h5>Contact Us</h5>
+						<div class="thumb80" style="background: url('{% static 'images/ittpo_old.png' %}') no-repeat left center; background-size: 75px 75px;">
+						<p>The Professor Incharge and office staff members may be contacted over email or telephone for information on training and placement at IIT (BHU) Varanasi ... <br>
+						<a href="{% url 'tpo:Contact_Us' %}" class="ui">Office Contacts</a></p>
+						</div>
+					</td>
+					<td style="text-align:left">
+						<h5>&nbsp;</h5>
+						<div class="thumb100" style="background: url('{% static 'images/varanasi.jpg' %}') no-repeat left center; background-size: 100px 75px;">
+						<p>Varanasi is the cultural capital of India and the melting pot of Indian civilization. Varanasi or Benaras has a well-developed transport network and is well ... <br>
+						<a href="{% url 'tpo:Varanasi' %}" class="ui">Varanasi</a></p>
+						</div>
+					</td>
+				</tr>
+				</tbody>
+				<tbody>
+				</tbody>
+			</table>
+		</div>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends 'tpo/base.html' %}
+{% load static %}
+{% block content %}
+		<div class="container" style="margin-top: 2%">
+			<div>
+				<h3>Academic Overview</h3>
+				
+				<p>The departments equip students with the best possible trades of an engineer through their rigorous
+				regime of classes and laboratoray sessions for five days a week. The academic session is divided in two
+				semesters with 100 working days in odd semester and 80 working days in even semester. Growth of the students
+				is constantly monitored by "Class Tests" and regular "Assignments". To continue the momentum of studies 
+				each semester has two "Mid semester test" whose marks add up and decide the overall performance of a particular student.</p>
+				
+		
+				
+				<p>As an indication of academic excellence achieved by Institute of Technology, four of its Engineering Departments
+				are recognized by UGC as Center of Advanced Study; two others are recognized for Special Assistance Programme. In addition, 
+				six departments have also received UGC support under the COSIST programme and eight departments have received support under 
+				FIST programme of DST, New Delhi. The DST also established the National Electron Microscope Facility (NELMIF) way back in 1982. 
+				The Departments of Metallurgical and Mining Engineering have been identified as centers under the Quality Improvement Programme. 
+				It has been consistently ranked in the top 10 engineering institutions of the country in various surveys. </p>
+
+				<img src="{% static 'images/academic.jpg' %}" width="100%"/>
+				
+				
+				<p>The Institute through its demanding curriculum has made it mandatory for all students to pursue an Industrial 
+				Internship Programs in their third year accompained by the Industrial Tour to the various department concerned industries.
+				All the laboratories of the institute are equipped with modern instruments and machinery to equip students with the fundamental 
+				knowledge pertaining to their respective streams. All the departments are equiped with the latest and world class technology 
+				through their "Sophisticated Instrument Laboratories". </p>
+	
+	
+				<p>Various Seminars and Guest lectures are organised by the institute to gear up the students for the outside world 
+				and to help them keep pace with the changing scenario in industries and research.Professional Communication is a necessary 
+				part of the student curriculum.</p>
+			
+				
+			<script type='text/javascript'>function init_map(){var myOptions = {zoom:10,center:new google.maps.LatLng(25.3176452,82.97391440000001),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(25.3176452,82.97391440000001)});google.maps.event.addListener(marker, 'click', function(){infowindow.open(map,marker);});infowindow.open(map,marker);}google.maps.event.addDomListener(window, 'load', init_map);</script>
+				<br><br>
+			</div>
+			
+		</div>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "tpo/base.html" %}
+{% block content %}
+<br><br>
+<div class="container" style="margin-top: 2%">
+				<div>
+					<h3>Login</h3>
+				</div>
+
+
+<form action="login" method="post">
+                      {% csrf_token %}
+                      <label for="00C">User name: </label>
+                      <br>
+                      <input type="text" id ="00C" name="username" placeholder="username"><br>
+                      <br>
+                      <label for="00Q">Password: </label>
+                      <br>
+                      <input type="password" id="00Q" name="password" placeholder="password"><br>
+                      <br>
+                      <input type="submit" value="login">
+
+                    </form>
+	</div>
+{% endblock %}

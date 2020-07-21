@@ -1,0 +1,445 @@
+{% extends 'tpo/base.html' %}
+{% load static %}
+
+{% block content %}
+		<br><br>
+		<div class="container">
+		<div id="response-panel" class="panel">
+			<form action="#!" method="post" id="_write:sel._response-panel">
+				{% csrf_token %}
+				<table class="formtable tstriped">
+					<tbody>			
+						<tr>
+							<td colspan="2" class="section"><h4>Basic Company Details</h4></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>Name of the Company</td>
+							<td><input type="text" name='Name_Of_the_Company'  class="required cover"><span class="hidden error" >Invalid Name</span></td>
+						</tr>
+						<tr>
+							<td>Address</td>
+							<td><textarea name="Address" class="cover"></textarea></td>
+						</tr>
+						<tr>
+							<td>Type</td>
+							<td><input type="text" name='Type'  class="required cover"><span class="hidden error" >Invalid Name</span></td>
+						</tr>
+						<tr>
+							<td>Industry Sector(s)</td>
+							<td>
+								<table class="subtable part50 cover">
+									<tbody>
+										<tr>
+											<td>
+												<p><input type="checkbox" name="Indstry_sctr_Core" id="Indstry_sctr_Core" />
+												<label for="Indstry_sctr_Core">Core Engineering</label></p>
+												<p><input type="checkbox" name="Indstry_sctr_consulting" id="Indstry_sctr_consulting" />
+												<label for="Indstry_sctr_consulting">IT</label></p>
+											</td>
+											<td>
+												<p><input type="checkbox" name="Indstry_sctr_IT"id="Indstry_sctr_IT" >
+												<label for="Indstry_sctr_IT">Consulting</label></p>
+												<p><input type="checkbox" name="Indstry_sctr_Finanace"id="Indstry_sctr_Finanace" />
+												<label for="Indstry_sctr_Finanace">Finance</label></p>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							<table><tbody>
+								<tr>
+
+									<td>Others : </td><td><input type="text" name="Indstry_sctr_Other"></td><td><span class="desc">(Please specify)</span></td>
+								</tr>
+							</table></tbody>
+							</td>
+						</tr>
+						<tr>
+							<td>Requirement(s) in terms of Functional Areas</td>
+							<td>
+								<table class="subtable part50 cover">
+									<tbody>
+										<tr>
+											<td>
+												<p><input type="checkbox" id="req_functional_areas_Red" name="req_functional_areas_Red"/><label for="req_functional_areas_Red">Developer</label></p>
+												<p><input type="checkbox" id="req_functional_areas_Maintenance" name="req_functional_areas_Maintenance"/><label for="req_functional_areas_Maintenance">Maintenance</label></p>
+												<p><input type="checkbox" id="req_functional_areas_Production" name="req_functional_areas_Production" /><label for="req_functional_areas_Production">Production</label></p>
+												<p><input type="checkbox" id="req_functional_areas_RD" name="req_functional_areas_RD" /><label for="req_functional_areas_RD">R & D</label></p>
+											</td>
+											<td>
+												<p><input type="checkbox" id="req_functional_areas_Finance" /><label for="req_functional_areas_Finance">Finance</label></p>
+												<p><input type="checkbox" id="req_functional_areas_Design" name="req_functional_areas_Design" /><label for="req_functional_areas_Design">Design</label></p>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+								<table><tbody>
+								<tr>
+
+									<td>Others : </td><td><input type="text" name="req_functional_areas_Others"></td><td><span class="desc">(Please specify)</span></td>
+								</tr>
+							</table></tbody>
+							</td>
+						</tr>
+						<tr>
+							<td>Vision &amp; Interests</td>
+							<td><textarea name="VsnandInterest" class="cover"></textarea><span class="desc">(Optional)</span></td>
+						</tr>
+						<tr>
+							<td colspan="2" class="section"><h4>Contact Person from Organization</h4></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>Name</td>
+							<td><input type="text" name="PrsnName" class="required cover"><span class="error hidden">Invalid Name</span></td>
+						</tr>
+						<tr>
+							<td>Designation</td>
+							<td><input type="text" name="PrsnDesignation" class="required cover"><span class="error hidden">Invalid Designation</span></td>
+						</tr>
+						<tr>
+							<td>Email</td>
+							<td><input type="text" name="PrsnEmail" class="required email cover"><span class="error hidden">Invalid Email</span></td>
+						</tr>
+						<tr>
+							<td>Phone</td>
+							<td><input type="text" name="PrsnPhone" class="required cover"><span class="error hidden">Invalid Phone</span></td>
+						</tr>
+						<tr>
+							<td colspan="2" class="section"><h4>Shortlisting Criteria</h4></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>CGPA (on 10 point scale)</td>
+							<td><input type="text" name="CGPA" class=""></td>
+						</tr>
+						<tr>
+							<td>XII Percentage</td>
+							<td><input type="text" name="XII_perc" class=""></td>
+						</tr>
+						<tr>
+							<td>X Percentage</td>
+							<td><input type="text" name="X_perc" class=""></td>
+						</tr>
+						<tr>
+							<td>Specialization (for post graduate students)</td>
+							<td><input type="text" name="SpecialisationPG" class="cover"></td>
+						</tr>
+						<tr>
+							<td>Age Limits (if any)</td>
+							<td><input type="text" name="Age_limits" class=""></td>
+						</tr>
+						<tr>
+							<td colspan="2" class="section"><h4>Selection Process</h4></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>Test(s)</td>
+							<td>
+								<table class="subtable part50 cover">
+									<tbody>
+										<tr>
+											<td>
+											<p><input type="checkbox" id="Test_Written"name="Test_Written" /><label for="Test_Written">Written Test</label></p>
+											<p><input type="checkbox" id="Test_Online"name="Test_Online" /><label for="Test_Online">Online Test</label></p>
+											</td>
+											<td>
+											<p><input type="checkbox" id="Test_Aptitude" name="Test_Aptitude"/><label for="Test_Aptitude">Aptitude Test</label></p>
+											<p><input type="checkbox" id="Test_Technical" name="Test_Technical" /><label for="Test_Technical">Technical Test</label></p>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+								<table><tbody>
+								<tr>
+
+									<td>Others : </td><td><input type="text" name="Test_Others"></td><td><span class="desc">(Please specify)</span></td>
+								</tr>
+							</table></tbody>
+							</td>
+						</tr>
+						<tr>
+							<td>Group Discussion</td>
+							<td>
+								<p><input name="GD" type="radio" id="test21" >
+								<label for="test21">YES</label></p>
+								<p><input name="GD" type="radio" id="test22" >
+								<label for="test22">NO</label></p>
+							</td>
+						</tr>
+						<tr>
+							<td>Personal Interview(s)</td>
+							<td>
+								<table class="subtable part50 cover">
+									<tbody>
+										<tr>
+											<p><input type="checkbox" id="PITechnical"name="PITechnical" /><label for="PITechnical">Technical</label></p>
+											<p><input type="checkbox" id="PIHR" name="PIHR"/><label for="PIHR">HR</label></p>
+										</tr>
+									</tbody>
+								</table>
+							<table><tbody>
+								<tr>
+
+									<td>Others : </td><td><input type="text" name="PIOthers"></td><td><span class="desc">(Please specify)</span></td>
+								</tr>
+							</table></tbody>
+							</td>
+						</tr>
+						<tr>
+							<td>Service Agreement (if any)</td>
+							<td><input type="text" name="ServiceAgreement" class="cover"></td>
+						</tr>
+						<tr>
+							<td>Training Period (if any)</td>
+							<td><input type="text" name="TrainingPeriod" class="cover"></td>
+						</tr>
+						<tr><td colspan="2" class="section">
+							<h4>Students' Profile and Your Tentative Requirement</h4>
+							<p class="desc">(expected, not necessarily committed)</p>
+							<div style="padding: 10px; font-size: 12px;">
+							<p>Note : B. Tech, IDD and IMD students are admitted through IIT-JEE while M. Tech students through GATE</p>
+							<p>IDD = Integrated Dual Degree (5yr. B. Tech + M. tech) and IMD = Integrated Masters Degree (5yr M. Tech)</p></div>
+							</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><a href="http://itbhu.ac.in/cer" target="_blank">All Streams</a></td>
+							<td>
+								<table class="subtable part33 full">
+									<tbody>
+										<tr>
+											<td><p><input type="checkbox" id="AllStreamsBtech"name="AllStreamsBtech" /><label for="AllStreamsBtech">B. Tech.</label></p></td>
+											<td><p><input type="checkbox" id="AllStreamsIDD"name="AllStreamsIDD" /><label for="AllStreamsIDD">IDD</label></p>
+											<p><input type="checkbox" id="AllStreamsIMD" name="AllStreamsIMD" /><label for="AllStreamsIMD">IMD</label></p></td>
+											<td><p><input type="checkbox" id="AllStreamsMTech" name="AllStreamsMTech" /><label for="AllStreamsMTech">M.Tech</label></p></td>
+										</tr>
+									</tbody>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td><a href="http://itbhu.ac.in/cer" target="_blank">Ceramic Engineering</a></td>
+							<td>
+								<table class="subtable part33 full">
+									<tbody>
+										<tr>
+											<td><p><input type="checkbox" id="CeraBtech" name="CeraBtech"/><label for="CeraBtech">B. Tech.</label></p></td>
+											<td><p><input type="checkbox" id="CeraIDD" name="CeraIDD" /><label for="CeraIDD">IDD</label></p></td>
+											<td><p><input type="checkbox" id="CeraMTech" name="CeraMTech" /><label for="CeraMTech">M.Tech.</label></p></td>
+										</tr>
+									</tbody>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td><a href="http://itbhu.ac.in/che" target="_blank">Chemical Engineering</a></td>
+							<td>
+								<table class="subtable part33 full">
+									<tbody>
+										<tr>
+											<td><p><input type="checkbox" id="ChemBTech" name="ChemBTech"/><label for="ChemBTech">B. Tech.</label></p></td>
+											<td></td>
+											<td><p><input type="checkbox" id="ChemMTech" name="ChemMTech"/><label for="ChemMTech">M.Tech.</label></p></td>
+										</tr>
+									</tbody>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td><a href="http://itbhu.ac.in/civ" target="_blank">Civil Engineering</a></td>
+							<td>
+								<table class="subtable part33 full">
+									<tbody>
+										<tr>
+											<td><p><input type="checkbox" id="CivilBtech" name="CivilBtech"/><label for="CivilBtech">B. Tech.</label></p></td>
+											<td><p><input type="checkbox" id="CivilIDD" name="CivilIDD" /><label for="CivilIDD">IDD (Structural Engineering)</label></p></td>
+											<td><p><input type="checkbox" id="CivilMtech" name="CivilMtech"/><label for="CivilMtech">M. Tech.</label></p><br></td>
+
+										</tr>
+									</tbody>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td><a href="http://itbhu.ac.in/cse" target="_blank">Computer Engineering</a></td>
+							<td>
+								<table class="subtable part33 full">
+									<tbody>
+										<tr>
+											<td><p><input type="checkbox" id="ComputerBtech" name="ComputerBtech"/><label for="ComputerBtech">B. Tech.</label></p></td>
+											<td><p><input type="checkbox" id="ComputerIDD" name="ComputerIDD"/><label for="ComputerIDD">IDD</label></p></td>
+											<td></td>
+										</tr>
+									</tbody>
+								</table>
+							</td>
+						</tr>
+							<tr>
+							<td><a href="http://itbhu.ac.in/eee" target="_blank">Electrical Engineering</a></td>
+							<td>
+								<table class="subtable part33 full">
+								<tbody>
+									<tr>
+										<td><p><input type="checkbox" id="TricalBtech" name="TricalBtech" /><label for="TricalBtech">B. Tech.</label></p></td>
+										<td><p><input type="checkbox" id="TricalIDD" name="TricalIDD" /><label for="TricalIDD">IDD (Power Electronics)</label></p></td>					</td>
+										<td><p><input type="checkbox" id="TricalMTech" name="TricalMTech"/><label for="TricalMTech">M. Tech. </label></p></td>
+									</tr>
+								</tbody>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td><a href="http://itbhu.ac.in/ece" target="_blank">Electronics Engineering</a></td>
+							<td>
+								<table class="subtable part33 full">
+									<tbody>
+										<tr>
+											<td><p><input type="checkbox" id="TronicsBtech" name="TronicsBtech"/><label for="TronicsBtech">B. Tech.</label></p></td>
+											<td></td>
+											<td><p><input type="checkbox" id="TronicsMTech" name="TronicsMTech" /><label for="TronicsMTech">M. Tech. </label></p><br></td>
+
+											</tr>
+									</tbody>
+								</table>
+							</td>
+						</tr>
+							<tr>
+								<td><a href="http://itbhu.ac.in/mec" target="_blank">Mechanical Engineering</a></td>
+									<td>
+									<table class="subtable part33 full">
+										<tbody>
+										<tr>
+											<td><p><input type="checkbox" id="MechBtech" name="MechBtech"/><label for="MechBtech">B. Tech.</label></p><br></td>
+											<td><p><input type="checkbox" id="MechIDD" name="MechIDD"/><label for="MechIDD">IDD</label></p><br>
+											<td><p><input type="checkbox" id="MechMTech" name="MechMTech"/><label for="MechMTech">M. Tech</label></p><br></td>
+										</tr>
+									</tbody>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td><a href="http://itbhu.ac.in/met" target="_blank">Metallurgical Engineering</a></td>
+							<td>
+								<table class="subtable part33 full">
+									<tbody>
+										<tr>
+											<td><p><input type="checkbox" id="MetaBtech" name="MetaBtech"/><label for="MetaBtech">B. Tech.</label></p><br></td>
+											<td><p><input type="checkbox" id="MetaIDD" name="MetaIDD"/><label for="MetaIDD">IDD</label></p><br></td>
+											<td><p><input type="checkbox" id="MetaMTech"name="MetaMTech" /><label for="MetaMTech">M. Tech.</label></p><br></td>
+										</tr>
+									</tbody>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td><a href="http://itbhu.ac.in/min" target="_blank">Mining Engineering</a></td>
+							<td>
+								<table class="subtable part33 full">
+									<tbody>
+										<tr>
+											<td><p><input type="checkbox" id="MinBtech" name="MinBtech" /><label for="MinBtech">B. Tech.</label></p><br></td>
+											<td><p><input type="checkbox" id="MinIDD"name="MinIDD"/><label for="MinIDD">IDD</label></p><br></td>
+											<td><p><input type="checkbox" id="MinMTech" name="MinMTech" /><label for="MinMTech">M. Tech. </label></p></td>
+										</tr>
+									</tbody>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td><a href="http://itbhu.ac.in/bce" target="_blank">Bio-Chemical Engineering</a></td>
+							<td>
+								<table class="subtable part33 full">
+									<tbody>
+										<tr>
+											<td></td>
+											<td><p><input type="checkbox" id="BioChemMTech"name="BioChemMTech" /><label for="BioChemMTech">M.Tech.</label></p><br></td>
+											<td><p><input type="checkbox" id="BioChemIDD" name="BioChemIDD"/><label for="BioChemIDD">IDD</label></p><br></td>
+										</tr>
+									</tbody>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td><a href="http://itbhu.ac.in/bme" target="_blank">Bio-Medical Engineering</a></td>
+							<td>
+								<table class="subtable part33 full">
+									<tbody>
+										<tr>
+											<td></td>
+											<td><p><input type="checkbox" id="BioMedIDD"name="BioMedIDD" /><label for="BioMedIDD">IDD</label></p><br></td>
+											<td><p><input type="checkbox" id="BioMedMTech" name="BioMedMTech"/><label for="BioMedMTech">M. Tech.</label></p><br></td>
+										</tr>
+									</tbody>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td><a href="http://itbhu.ac.in/mst" target="_blank">Material Science &amp; Technology</a>
+							<td>
+								<table class="subtable part33 full">
+									<tbody>
+										<tr>
+											<td></td>
+											<td><p><input type="checkbox" id="MSTIDD" name="MSTIDD"/><label for="MSTIDD">IDD</label></p><br></td>
+											<td><p><input type="checkbox" id="MSTMTech"name="MSTMTech" /><label for="MSTMTech">M. Tech.</label></p><br></td>
+										</tr>
+									</tbody>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td><a href="http://itbhu.ac.in/phe" target="_blank">Pharmaceutical Engineering</a></td>
+							<td>
+								<table class="subtable part33 full">
+									<tbody>
+										<tr>
+											<td><p><input type="checkbox" id="PharmaBtech" name="PharmaBtech"/><label for="PharmaBtech">B. Tech.</label></p><br></td>
+											<td><p><input type="checkbox" id="PharmaIDD" name="PharmaIDD"/><label for="PharmaIDD">IDD </label></p><br>
+											<td><p><input type="checkbox" id="PharmaMTech" name="PharmaMTech"/><label for="PharmaMTech">M. Tech.</label></p><br></td>
+										</tr>
+									</tbody>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td><a href="http://itbhu.ac.in/app" target="_blank">Engineering Physics</a></td>
+							<td><p><input type="checkbox" id="EngPhy" name="EngPhy"/><label for="EngPhy">IMD (through IIT JEE)</label></p><br></td>
+						</tr>
+						<tr>
+							<td><a href="http://itbhu.ac.in/apm" target="_blank">Mathematics &amp; Computing</a></td>
+							<td><p><input type="checkbox" id="MNC" name="MNC"/><label for="MNC">IMD</label></p><br></td>
+						</tr>
+						<tr>
+							<td><a href="http://itbhu.ac.in/apc" target="_blank">Industrial Chemistry</a></td>
+							<td><p><input type="checkbox" id="InC" name="InC" /><label for="InC">IMD</label></p><br>	</td>
+						</tr>
+						<tr><td colspan="2" class="section">
+							<h4>Total Emoluments</h4>
+							</td><td></td>
+						</tr>
+						<tr>
+							<td>CTC</td>
+							<td>
+								<input type="text" name="CTC" class="required cover">
+								<span class="error hidden">Invalid CTC</span>
+							</td>
+						</tr>
+
+						<tr>
+							<td>In Hand</td>
+							<td>
+								<input type="text" name="In_Hand" class="cover">
+							</td>
+						</tr>
+						<tr>
+							<td><input type="hidden" name="service" value="manager.form.contact"></td>
+							<td><button class="btn waves-effect waves-light" type="submit" name="submit" value="Submit">Submit<i class="material-icons right">send</i></button>
+							&nbsp;&nbsp;<button class="btn waves-effect waves-light" type="reset" name="reset" value="Reset">Reset</button><span class="status"></span></td>
+						</tr>
+				</tbody>
+				</table>
+			</form>
+		</div>
+		</div>
+{% endblock %}
